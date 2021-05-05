@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container-sm">
+        <h2>Acticvidades relacionadas a la box:</h2>
+        <br>
+        <p>En desarrollo</p>
+        <h2>Lista de Actividades:</h2>
+
+        {% for activitie in activities %}
+        <div>
+            <ul>
+                <li>
+                    {{ activitie.name }}
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</body>
+
+</html>

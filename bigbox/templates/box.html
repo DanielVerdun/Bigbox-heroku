@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container-sm">
+        <h2>LISTA DE BOX</h2>
+        {% for box in boxs %}
+        <!--bucle para recorrer las box-->
+        <div>
+            <ul>
+                <li>
+                    <a href="{% url 'infobox' box.id %}">{{ box.name }}</a>
+                </li>
+            </ul>
+
+        </div>
+        {% endfor%}
+
+
+
+    </div>
+
+
+    {%endblock%}
+</body>
+
+</html>

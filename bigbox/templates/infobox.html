@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infobox</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container-sm">
+
+        <h2>Informacion de la box seleccionada:</h2>
+
+        {% for box in boxs %}
+        <!--bucle para recorrer los post-->
+        <div>
+            <p>ID: {{ box.id }} </p>
+            <p>Name: {{ box.name }} </p>
+            <p>Internal_name: {{ box.internal_name }} </p>
+            <p>Description: {{box.description }} </p>
+            <p>Activities: {{ box.activities }} </p>
+            <p>Price: {{ box.price }} </p>
+            <p>Purchase_available : {{ box.purchase_available }} </p>
+            <p>Category: {{ box.category }} </p>
+        </div>
+        {% endfor %}
+
+        <h2>Las primeras cinco activity son:</h2>
+
+        {% for activitie in activities %}
+
+        {{ activitie.id }}
+
+        {% endfor %}
+        <h2>Sus nombres son:</h2>
+        {% for activitie in activities%}
+        <div>
+            <ul>
+                <li>
+                    {{ activitie.name }}
+                </li>
+            </ul>
+
+        </div>
+        {% endfor%}
+        <a href="{% url 'activity'  %}">Ver todas las actividades</a>
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>
