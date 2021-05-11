@@ -16,8 +16,15 @@
     {% block content %}
     <div class="container-sm">
         <h2>Acticvidades relacionadas a la box:</h2>
-        <br>
-        <p>En desarrollo</p>
+        {% for activities_box in activities_boxs %}
+        <div>
+            <ul>
+                <li>
+                    {{activities_box.name}}
+                </li>
+            </ul>
+        </div>
+
         <h2>Lista de Actividades:</h2>
 
         {% for activitie in activities %}

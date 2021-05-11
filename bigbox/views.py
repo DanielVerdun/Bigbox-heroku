@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from bigbox.models import Activity, Box,Prodcut,Category
-
+from django.core.paginator import Paginator
+from django.http import Http404
 # Create your views here.
 
 
@@ -17,7 +18,16 @@ def infobox(request, category_id):
     activities= Activity.objects.all()[:5]
     return render(request, "infobox.html", {"boxs": boxs,"activities":activities})
 
-def activity(request):
+def activity(request,category_id):
     #Muestra todas las actividades    
     activities= Activity.objects.all()
-    return render(request, "activity.html",{"activities":activities})
+    page = request.GET.get("page",1)
+    
+    try:
+        paginator = Paginator(activities,20)
+        activities = paginator.page(page)
+    except: 
+        raise Http404    
+
+    activities_boxs= Activity.objects.filter(id=category_id)
+    return render(request, "activity.html",{"activities":activities,"activities_boxs":activities_boxs})
