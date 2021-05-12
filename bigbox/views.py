@@ -9,6 +9,7 @@ def box(request):
     # Todos los objetos  de la class Box, lo guardamos dentro de la variable.
     boxs = Box.objects.all()
     # Luego mostramos los datos en box.html
+    
     return render(request, "box.html", {"boxs": boxs})
 
 def infobox(request, category_id):
@@ -16,6 +17,7 @@ def infobox(request, category_id):
     boxs = Box.objects.filter(id=category_id )
     # Muestra las primeras cinco actividades
     activities= Activity.objects.all()[:5]
+    
     return render(request, "infobox.html", {"boxs": boxs,"activities":activities})
 
 def activity(request):
@@ -26,10 +28,8 @@ def activity(request):
     try:
         paginator = Paginator(activities,20) 
         activities = paginator.page(page)           
+    
     except:
         raise Http404    
-
-    #activities = paginator.page(page)
-   
 
     return render(request, "activity.html",{"entity":activities,"paginator":paginator})
