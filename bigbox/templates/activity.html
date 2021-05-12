@@ -23,7 +23,17 @@
         {{ contact.full_name|upper }}<br>
         ...
         {% endfor %}-->
-
+        <h2>Mostrando las primeras 20 actividades</h2>
+        <h3>Paginando de a 20</h3>
+        {% for activitie in activities %}
+        <div>
+            <ul>
+                <li>
+                    {{ activitie.name }}
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
         <div class="pagination">
             <span class="step-links">
                 {% if page_obj.has_previous %}
