@@ -17,8 +17,8 @@
     <div class="container-sm">
         <h2>Acticvidades relacionadas a la box:</h2>
         <p>en desarrollo...</p>
-        
-       <!-- {% for contact in page_obj %}
+
+        <!-- {% for contact in page_obj %}
         {# Each "contact" is a Contact model object. #}
         {{ contact.full_name|upper }}<br>
         ...
@@ -26,16 +26,16 @@
         <h2>Mostrando las primeras 20 actividades</h2>
         <h3>Paginando de a 20</h3>
         {% for activitie in entity %}
-            <div>
-                <ul>
-                    <li>
-                        {{ activitie.name }}
-                    </li>
-                </ul>
-            </div>
-            {% endfor %}
         <div>
-            {% include "paginator.html %}
+            <ul>
+                <li>
+                    {{ activitie.name }}
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+        <div>
+            {% include "template/paginator.html" %}
         </div>
 
         <h2>Lista de Actividades:</h2>
