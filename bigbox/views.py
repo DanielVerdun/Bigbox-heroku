@@ -18,16 +18,16 @@ def infobox(request, category_id):
     activities= Activity.objects.all()[:5]
     return render(request, "infobox.html", {"boxs": boxs,"activities":activities})
 
-def activity(request,category_id):
-    #Muestra todas las actividades    
+def activity(request):
+    # Muestra todas las actividades    
     activities= Activity.objects.all()
-    page = request.GET.get("page",1)
-    
-    try:
-        paginator = Paginator(activities,20)
-        activities = paginator.page(page)
-    except: 
-        raise Http404    
+    # Paginador
+    paginator = Paginator(activities,20)
 
-    activities_boxs= Activity.objects.filter(id=category_id)
-    return render(request, "activity.html",{"activities":activities,"activities_boxs":activities_boxs})
+    page_number = request.GET.get("page",1)
+    page_obj = paginator.get_page(page_number)
+
+    #activities = paginator.page(page)
+   
+
+    return render(request, "activity.html",{"activities":activities, "page_obj": page_obj})
