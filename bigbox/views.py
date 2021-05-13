@@ -27,6 +27,6 @@ def activity(request):
     paginator = Paginator(actividades,20)
     
     page = request.GET.get("page",1)
-    activitividades_page = paginator.get_page(page)           
+    actividades_page = paginator.get_page(page)           
     
     return render(request, "activity.html",{"actividades":actividades,"actividades_page":actividades_page})
