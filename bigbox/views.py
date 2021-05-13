@@ -31,9 +31,5 @@ def activity(request):
     
     except:
         raise Http404    
-    
-    data = {
-        {"entity":activities,"paginator":paginator}
-    }
 
-    return render(request, "activity.html",data)
+    return render(request, "activity.html",{"activities":activities,"paginator":paginator})
