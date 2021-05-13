@@ -16,7 +16,18 @@
     {% block content %}
     <div class="container-sm">
         <h2>Acticvidades relacionadas a la box:</h2>
-        <p>en desarrollo...</p>
+        {% for act in actividades_list  %}
+        <div>
+            <ul>
+                <li>
+                    {{ act.activities }}
+                </li>
+            </ul>
+        </div>
+            </p>
+        
+        {% endfor %}
+        
 
         <!-- {% for contact in page_obj %}
         {# Each "contact" is a Contact model object. #}
@@ -25,7 +36,7 @@
         {% endfor %}-->
         <h2>Mostrando las primeras 20 actividades</h2>
         <h3>Paginando de a 20</h3>
-        {% for activitie in activities_page %}
+        {% for activitie in actividades_page %}
         <div>
             <ul>
                 <li>
@@ -34,7 +45,7 @@
             </ul>
         </div>
         {% endfor %}
-        {% include "pagination.html" with page_obj=activities_page  %}
+        {% include "pagination.html" with page_obj=actividades_page  %}
        
 
         <!--<h2>Lista de Actividades:</h2>
