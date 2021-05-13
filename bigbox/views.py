@@ -23,13 +23,11 @@ def infobox(request, category_id):
 def activity(request):
     # Muestra todas las actividades    
     activities= Activity.objects.all()
-    page = request.GET.get("page",1)
-    # Paginador
-    try:
-        paginator = Paginator(activities,20) 
-        activities = paginator.page(page)           
+    paginator = Paginator(activities,20)
     
-    except:
-        raise Http404    
+    page = request.GET.get("page",1)
+    activities_page = paginator.get_page(page)           
+    
+   
 
-    return render(request, "activity.html",{"activities":activities,"paginator":paginator})
+    return render(request, "activity.html",{"activities":activities,"activities_page":activities_page})

@@ -25,7 +25,7 @@
         {% endfor %}-->
         <h2>Mostrando las primeras 20 actividades</h2>
         <h3>Paginando de a 20</h3>
-        {% for activitie in activities %}
+        {% for activitie in activities_page %}
         <div>
             <ul>
                 <li>
@@ -33,8 +33,8 @@
                 </li>
             </ul>
         </div>
-        
         {% endfor %}
+        {% include "pagination.html" with page_obj=activities_page  %}
        
 
         <!--<h2>Lista de Actividades:</h2>
