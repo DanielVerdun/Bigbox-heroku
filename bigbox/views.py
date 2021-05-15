@@ -16,9 +16,9 @@ def infobox(request, category_id):
     # filtra la box que reciba en el parametro categoria_id
     boxs = Box.objects.filter(id=category_id )
     # Muestra las primeras cinco actividades
-    actividades= Activity.objects.all()[:5]
+    cinco_actividades= Activity.objects.all()[:5]
     
-    return render(request, "infobox.html", {"boxs": boxs,"actividades":actividades})
+    return render(request, "infobox.html", {"boxs": boxs,"cinco_actividades":cinco_actividades})
 
 def activity(request):
     #activ = Box.objects.filter(box_id=activity_id )
