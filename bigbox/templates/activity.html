@@ -17,16 +17,20 @@
     <div class="container-sm">
         <h2>Acticvidades relacionadas a la box:</h2>
 
-        {% for act in activities %}
+
         <div>
-            <ul>
-                <li>
-                    {{act.name}}
-                </li>
-            </ul>
-            <p>en desarrollo...</p>
+            {% for box in boxs %}
+                
+                {{box.name}}
+            
+                {% for activ in actividades %}
+                
+                    {{activ.name}}
+                
+                {% endfor %}
+            {% endfor %}
         </div>
-        {% endfor %}
+        
 
         <!-- {% for contact in page_obj %}
         {# Each "contact" is a Contact model object. #}
