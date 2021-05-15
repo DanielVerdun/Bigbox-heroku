@@ -31,4 +31,4 @@ def activity(request):
     page = request.GET.get("page",1)
     actividades_page = paginator.get_page(page)           
     
-    return render(request, "activity.html",{"actividades":actividades,"actividades_page":actividades_page,#"activ":activ})
+    return render(request, "activity.html",{"actividades":actividades,"actividades_page":actividades_page})
