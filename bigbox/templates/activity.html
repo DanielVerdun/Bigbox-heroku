@@ -34,27 +34,26 @@
         ...
         {% endfor %}-->
         <h2>Mostrando las primeras 20 actividades</h2>
-        <h3>Paginando de a 20</h3>
+        
         
         <div>
-            <div>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Actividades:</th>
-                        </tr>
-                    </thead>
-                    {% for activitie in actividades_page %}
-                    <tbody>
-                        <tr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Paginando de a 20:</th>
+                    </tr>
+                </thead>
+                {% for activitie in actividades_page %}
+                <tbody>
+                    <tr>
 
-                            <td>{{ activitie.name }}</td>
-                        </tr>
-                    </tbody>
-                    {% endfor%}
-                </table>
-            </div>
+                        <td>{{ activitie.name }}</td>
+                    </tr>
+                    <tr>
 
+                </tbody>
+                {% endfor%}
+            </table>
         </div>
         {% endfor %}
         {% include "pagination.html" with page_obj=actividades_page %}
