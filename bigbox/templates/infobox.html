@@ -64,7 +64,7 @@
         {% endfor %}
 
 
-        {% for activitie in activities %}
+
         <div>
             <table class="table">
                 <thead>
@@ -72,15 +72,17 @@
                         <th scope="col">Las primeras cinco activity son:</th>
                     </tr>
                 </thead>
+                {% for activitie in activities %}
                 <tbody>
                     <tr>
                         <th scope="row">Id:</th>
                         <td>{{ activitie.id }}</td>
                     </tr>
                 </tbody>
+                {% endfor %}
+
             </table>
         </div>
-        {% endfor %}
 
 
 
@@ -110,10 +112,9 @@
 
 
     </div>
-    <div class="container-center">
-        <form method="get" action="{% url 'activity'  %}">
-            <button type="submit" class="btn btn-dark" data-bs-toggle="button">Ver todas las actividades
-        </form>
+    <div class="container-sm">
+        <a href="{% url 'activity'  %}">Ver todas las actividades</a>
+        <a href="activity.html" class="btn btn-dark" role="button" data-bs-toggle="button">ver todas las actividades</a>
     </div>
     {% endblock %}
 
