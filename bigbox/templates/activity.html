@@ -20,10 +20,10 @@
 
         <div>
             {% for box in boxs %}
-                {{box.name}}
-                {% for act in box.actividades.all %}
-                    {{act.name}}
-                {% endfor %}
+            {{box.name}}
+            {% for act in box.actividades.all %}
+            {{act.name}}
+            {% endfor %}
             {% endfor %}
         </div>
 
@@ -37,11 +37,26 @@
         <h3>Paginando de a 20</h3>
         {% for activitie in actividades_page %}
         <div>
-            <ul>
-                <li>
-                    {{ activitie.name }}
-                </li>
-            </ul>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Actividades:</th>
+                        </tr>
+                    </thead>
+                    {% for activitie in activities %}
+                    <tbody>
+                        <tr>
+
+                            <td>{{ activitie.name }}</td>
+                        </tr>
+                        <tr>
+
+                    </tbody>
+                    {% endfor%}
+                </table>
+            </div>
+
         </div>
         {% endfor %}
         {% include "pagination.html" with page_obj=actividades_page %}
