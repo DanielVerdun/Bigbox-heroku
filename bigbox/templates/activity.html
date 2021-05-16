@@ -19,18 +19,16 @@
 
 
         <div>
-            {% for box in boxs %}
-                
-                {{box.name}}
-            
-                {% for activ in  box.object.all %}
-                
-                    {{activ.activities.all}}
-                
-                {% endfor %}
+
+
+            {% for act in activ.object.all %}
+
+            {{act.name.all}}
+
             {% endfor %}
+
         </div>
-        
+
 
         <!-- {% for contact in page_obj %}
         {# Each "contact" is a Contact model object. #}
