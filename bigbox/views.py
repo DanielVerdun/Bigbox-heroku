@@ -24,6 +24,7 @@ def activity(request):
     #activ = Box.objects.filter(box_id=activity_id )
     # Muestra todas las actividades /incluye paginador   
     boxs = Box.objects.all()
+    #actividades_id =Activity.objects.filter()
     actividades= Activity.objects.all()
     paginator = Paginator(actividades,20)
     

@@ -23,9 +23,9 @@
                 
                 {{box.name}}
             
-                {% for activ in  box.actividades.all %}
+                {% for activ in  box.object.all %}
                 
-                    {{activ.activities}}
+                    {{activ.activities.all}}
                 
                 {% endfor %}
             {% endfor %}
