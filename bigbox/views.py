@@ -20,10 +20,8 @@ def infobox(request, category_id):
     
     return render(request, "infobox.html", {"boxs": boxs,"activities":activities})
 
-def activity(request, activity_id):
-    activ = activity_id.GET.get("activ" )
+def activity(request):
     # Muestra todas las actividades /incluye paginador   
-    boxs = Box.objects.all()
     
     #actividades_id =Activity.objects.filter()
     actividades= Activity.objects.all()
