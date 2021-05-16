@@ -20,37 +20,101 @@
         {% for box in boxs %}
         <!--bucle para recorrer las box-->
         <div>
-            <p>ID: {{ box.id }} </p>
-            <p>Name: {{ box.name }} </p>
-            <p>Internal_name: {{ box.internal_name }} </p>
-            <p>Description: {{box.description }} </p>
-            <p>Activities: {{ box.activities }} </p>
-            <p>Price: {{ box.price }} </p>
-            <p>Purchase_available : {{ box.purchase_available }} </p>
-            <p>Category: {{ box.category }} </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="col">Id:</th>
+                        <td>{{ box.id }} </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Name:</th>
+                        <td>{{ box.name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Internal_name:</th>
+                        <td>{{ box.internal_name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Description:</th>
+                        <td>{{box.description }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Activities:</th>
+                        <td>{{ box.activities }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Price:</th>
+                        <td>{{ box.price }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Purchase_available :</th>
+                        <td>{{ box.purchase_available }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Category:</th>
+                        <td>{{ box.category }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         {% endfor %}
 
         <h2>Las primeras cinco activity son:</h2>
-
-        {% for activitie in activities %}
-
-        {{ activitie.id }}
-
-        {% endfor %}
-        <h2>Sus nombres son:</h2>
         {% for activitie in activities %}
         <div>
-            <ul>
-                <li>
-                    {{ activitie.name }}
-                </li>
-            </ul>
+            <table class="table">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Id:</th>
+                        <td>{{ activitie.id }}</td>
+                    </tr>
+                    <tr>
 
+                </tbody>
+            </table>
         </div>
+        {% endfor %}
+
+
+
+
+        <h2></h2>
+        {% for activitie in activities %}
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Sus nombres son:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td>{{ activitie.name }}</td>
+                    </tr>
+                    <tr>
+
+                </tbody>
+            </table>
+        </div>
+
         {% endfor%}
-        
-        <a href="{% url 'activity'  %}">Ver todas las actividades</a>
+
+    </div>
+    <div>
+        <a href="{% url 'activity'  %}" class="btn btn-dark" role="button" data-bs-toggle="button">Ver todas las
+            actividades</a>
+
     </div>
     {% endblock %}
 
