@@ -35,7 +35,7 @@
         {% endfor %}-->
         <h2>Mostrando las primeras 20 actividades</h2>
         <h3>Paginando de a 20</h3>
-        {% for activitie in actividades_page %}
+        
         <div>
             <div>
                 <table class="table">
@@ -44,14 +44,12 @@
                             <th scope="col">Actividades:</th>
                         </tr>
                     </thead>
-                    {% for activitie in activities %}
+                    {% for activitie in actividades_page %}
                     <tbody>
                         <tr>
 
                             <td>{{ activitie.name }}</td>
                         </tr>
-                        <tr>
-
                     </tbody>
                     {% endfor%}
                 </table>
