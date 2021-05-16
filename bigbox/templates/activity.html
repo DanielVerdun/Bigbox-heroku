@@ -21,12 +21,12 @@
         <div>
 
 
-            {% for act in actividades %}
-
-            {{act.name}}
-
+            {% for box in boxs %}
+                {{box.name}}
+                {% for act in box.actividades.all %}
+                    {{act.name}}
+                {% endfor %}
             {% endfor %}
-
         </div>
 
 
