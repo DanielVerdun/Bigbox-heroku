@@ -64,27 +64,27 @@
         {% endfor %}
 
 
-        {% for activitie in activities %}
+        <h2>Las primeras cinco activity son:</h2>
         <div>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Las primeras cinco activity son:</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
-                
+                {% for activitie in activities %}
                 <tbody>
                     <tr>
                         <th scope="col">Id:</th>
                         <td>{{ activitie.id }}</td>
                     </tr>
                 </tbody>
-                
+                {% endfor %}
 
             </table>
         </div>
-        {% endfor %}
-        {% for activitie in activities %}
+        
+        
         <div>
             <table class="table table-striped">
                 <thead>
@@ -92,25 +92,22 @@
                         <th scope="col">Sus nombres son:</th>
                     </tr>
                 </thead>
-                
+                {% for activitie in activities %}
                 <tbody>
                     <tr>
-
                         <td>{{ activitie.name }}</td>
                     </tr>
-                    <tr>
-
                 </tbody>
-                
+                {% endfor%}
             </table>
         </div>
-        {% endfor%}
+        
 
 
     </div>
-    <div class="conta">
-        
-        <a style="text-align:center; margin:auto;" href="{% url 'activity'  %}"class="btn btn-dark">Ver todas las actividades</a>
+    <div>
+        <a class="btn btn-primary" href="activity.html" role="button">Link</a>
+        <a  href="{% url 'activity'  %}"class="btn btn-dark">Ver todas las actividades</a>
     
     </div>
     {% endblock %}
