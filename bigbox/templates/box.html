@@ -14,12 +14,12 @@
 <body>
     {% block content %}
     <div class="row justify-content-md-center">
-        <div class="badge bg-primary text-lg-center" style="width: 20%; margin: 10px 10px;">
+        <div class="badge bg-primary text-lg-center">
             <H2>LISTA DE BOX</H2>
         </div>
         {% for box in boxs %}
         <!--bucle para recorrer las box-->
-        <div clas="container-sm"style="padding: auto;">
+        <div clas="justify-content-md-center">
             <ul>
                 <li class="row justify-content-md-center">
                     <a class="btn btn-success" href="{% url 'infobox' box.id %}" role="button">{{ box.name }}</a>
