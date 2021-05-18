@@ -38,6 +38,7 @@ class Activity(Prodcut):
 
 
 class Box(Prodcut):
+    slug = models.CharField(max_length=20)
     activities = models.ManyToManyField(Activity)
     price = models.IntegerField(verbose_name='precio de venta')
     purchase_available = models.BooleanField(
