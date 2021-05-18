@@ -101,14 +101,18 @@
                 {% endfor%}
             </table>
         </div>
-        
-
-
     </div>
+    
     <div class="d-grid gap-2 col-6 mx-auto">
         <a class="btn btn-dark" href="{% url 'activity'  %}" role="button">Ver todas las actividades</a>
-        
-    
+    </div>
+    <h2>Acticvidades relacionadas a la box:</h2>
+    <div>
+        {% for activities in box.activity.all %}
+        <ul>
+            <li>{{ activities.name }}</li>
+        </ul>
+        {% endfor %}
     </div>
     {% endblock %}
 
