@@ -22,6 +22,7 @@ def infobox(request, category_id):
 
 def activity(request):
     # Muestra todas las actividades /incluye paginador 
+    boxs =Box.objects.all()
     actividades= Activity.objects.all()
     paginator = Paginator(actividades,20)
     page = request.GET.get("page",1)
