@@ -15,60 +15,50 @@
 <body>
     {% block content %}
     <div class="container-sm">
-    </div>
-    <h2>Acticvidades relacionadas a la box:</h2>
-    <div>
-        {% for activities in box.activity.all %}
-        <ul>
-            <li>{{ activities.name }}</li>
-        </ul>
-        {% endfor %}
-    </div>
+
+        <h2>Acticvidades relacionadas a la box:</h2>
+
+        <div>
+            {% for activities in box.activity.all %}
+            <ul>
+                <li>{{ activities.name }}</li>
+            </ul>
+            {% endfor %}
+        </div>
 
 
-    <!-- {% for contact in page_obj %}
+        <!-- {% for contact in page_obj %}
         {# Each "contact" is a Contact model object. #}
         {{ contact.full_name|upper }}<br>
         ...
         {% endfor %}-->
-    <h2>Mostrando las primeras 20 actividades</h2>
+        <h2>Mostrando las primeras 20 actividades</h2>
 
-    <div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Paginando de a 20:</th>
-                </tr>
-            </thead>
-            {% for activitie in actividades_page %}
-            <tbody>
-                <tr>
-
-                    <td>{{ activitie.name }}</td>
-                <tr>
-
-            </tbody>
-            {% endfor%}
-        </table>
-
-    </div>
-
-    {% include "pagination.html" with page_obj=actividades_page %}
-
-
-    <!--<h2>Lista de Actividades:</h2>
-
-        {% for activitie in entity %}
         <div>
-            <ul>
-                <li>
-                    {{ activitie.name }}
-                </li>
-            </ul>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Paginando de a 20:</th>
+                    </tr>
+                </thead>
+                {% for activitie in actividades_page %}
+                <tbody>
+                    <tr>
+
+                        <td>{{ activitie.name }}</td>
+                    <tr>
+
+                </tbody>
+                {% endfor%}
+            </table>
+
         </div>
-        {% endfor %}-->
-    </div>
+
+        {% include "pagination.html" with page_obj=actividades_page %}
+
     {% endblock %}
+    </div>
+    
 </body>
 
 </html>
