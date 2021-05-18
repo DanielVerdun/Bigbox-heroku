@@ -20,8 +20,8 @@
         {% for box in boxs %}
         <!--bucle para recorrer las box-->
         <div>
-            <ul>
-                <li class="row justify-content-md-center">
+            <ul class="row justify-content-md-center">
+                <li >
                     <a class="btn btn-success" href="{% url 'infobox' box.id %}" role="button">{{ box.name }}</a>
                 </li>
             </ul>
