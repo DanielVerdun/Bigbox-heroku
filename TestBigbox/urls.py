@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('box/', views.box, name="box"),
     path('infobox/int:<category_id>/', views.infobox, name="infobox"),
-    path('activity/', views.activity, name="activity"),
+    path('activity/int:<category_id>/', views.activity, name="activity"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
