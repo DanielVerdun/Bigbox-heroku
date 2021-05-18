@@ -21,7 +21,7 @@ def infobox(request, category_id):
     # Muestra las primeras cinco actividades
     activities = Activity.objects.all()[:5]
     
-    return render(request, "infobox.html", {"boxs": boxs, "activities": activities,"boxes":boxes})
+    return render(request, "infobox.html", {"boxs": boxs, "activities": activities})
 
 
 def activity(request):
