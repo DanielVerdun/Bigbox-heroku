@@ -14,9 +14,9 @@
 <body>
     {% block content %}
     <div class="container-lg">
-        <div class="badge bg-primary text-wrap" style="width: 6%;">
+        <div class="badge bg-primary text-wrap" style="width: 6%; margin: 10px 10px;">
             LISTA DE BOX
-
+        </div>
             {% for box in boxs %}
             <!--bucle para recorrer las box-->
             <div>
@@ -27,7 +27,7 @@
                 </ul>
 
             </div>
-        </div>
+        
 
         {% endfor%}
 
