@@ -17,20 +17,17 @@
         <div class="badge bg-primary text-wrap" style="width: 20%; margin: 10px 10px;">
             LISTA DE BOX
         </div>
-            {% for box in boxs %}
-            <!--bucle para recorrer las box-->
-            <div>
-                <ul>
-                    <li>
-                        <a class="btn btn-success" href="{% url 'infobox' box.id %}" role="button">{{ box.name }}</a>
-                    </li>
-                </ul>
-
-            </div>
-        
+        {% for box in boxs %}
+        <!--bucle para recorrer las box-->
+        <div>
+            <ul>
+                <li>
+                    <a class="btn btn-success" href="{% url 'infobox' box.id %}" role="button">{{ box.name }}</a>
+                </li>
+            </ul>
+        </div>
 
         {% endfor%}
-
     </div>
 
 
