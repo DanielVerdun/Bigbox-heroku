@@ -19,9 +19,9 @@
         </div>
         {% for box in boxs %}
         <!--bucle para recorrer las box-->
-        <div>
+        <div clas="container-sm">
             <ul>
-                <li class="row justify-content-md-center" style="padding: 75%;">
+                <li class="row justify-content-md-center">
                     <a class="btn btn-success" href="{% url 'infobox' box.id %}" role="button">{{ box.name }}</a>
                 </li>
             </ul>
