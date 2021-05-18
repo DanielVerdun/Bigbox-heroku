@@ -17,7 +17,7 @@
     <div class="container-sm">
         <h2>Acticvidades relacionadas a la box:</h2>
         <div>
-            {% for activities in actividades %}
+            {% for activities in box.activity.all %}
             <ul>
                 <li>{{ activities.name }}</li>
             </ul>
